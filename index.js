@@ -1,6 +1,3 @@
-// Import stylesheets
-import './style.css';
-
 function encryptString(str) {
   let encryptedStr = '';
   for (let i = 0; i <= str.length; i++) {
@@ -13,7 +10,7 @@ function decryptString(str) {
   let decryptedStr = '';
   for (let i = 0; i < str.length; i++) {
     decryptedStr += String.fromCharCode(
-      str.charCodeAt(i) + 2 // <-- TODO: The bug is here, can you find it?
+      str.charCodeAt(i) - 2 // <-- TODO: The bug is here, can you find it?
     );
   }
   return decryptedStr;
@@ -22,6 +19,7 @@ function decryptString(str) {
 let encryptedUrl = 'jvvru<11yyy0eqoowfng0eqo1hknn/hqto1398:';
 let decryptedUrl = decryptString(encryptedUrl);
 console.log(decryptedUrl);
+console.log("ankit");
 
 // Showing the output to the browser document as well
 let formLinkElement = document.getElementById('decryptedUrl');
